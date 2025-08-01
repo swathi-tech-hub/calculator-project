@@ -1,0 +1,166 @@
+def binarysearch(list,key):
+    first=0
+    last=len(list)-1
+    while first <= last:
+        mid=(first+last)//2
+        if list[mid]==key:
+            return mid
+        elif key > list[mid]:
+            first = mid+1
+        elif key < list[mid]:
+            first = mid-1
+            return -1
+print("create a list by entering elemments in ascending order")<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Animated Calculator</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1e1f26, #2d2f3a);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      background: #2d2f3a;
+      border-radius: 20px;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      width: 300px;
+      transition: transform 0.4s;
+    }
+
+    .calculator:hover {
+      transform: scale(1.02);
+    }
+
+    .display {
+      background: #1e1f26;
+      color: #00ffcc;
+      font-size: 2rem;
+      border: none;
+      width: 100%;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      text-align: right;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .btn {
+      background: #383b4a;
+      color: white;
+      border: none;
+      padding: 20px;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #4c4f62;
+      transform: scale(1.05);
+    }
+
+    .operator {
+      background-color: #ff6b81;
+    }
+
+    .operator:hover {
+      background-color: #ff4757;
+    }
+
+    .equal {
+      background-color: #00b894;
+      grid-column: span 2;
+    }
+
+    .equal:hover {
+      background-color: #00cec9;
+    }
+
+    .clear {
+      background-color: #d63031;
+      color: white;
+      grid-column: span 2;
+    }
+
+    .clear:hover {
+      background-color: #e17055;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" class="display" disabled />
+    <div class="buttons">
+      <button class="btn">7</button>
+      <button class="btn">8</button>
+      <button class="btn">9</button>
+      <button class="btn operator">/</button>
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn operator">*</button>
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn operator">-</button>
+      <button class="btn">0</button>
+      <button class="btn">.</button>
+      <button class="btn equal">=</button>
+      <button class="btn operator">+</button>
+      <button class="btn clear">C</button>
+    </div>
+  </div>
+
+  <script>
+    const display = document.querySelector('.display');
+    const buttons = document.querySelectorAll('.btn');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        if (button.classList.contains('equal')) {
+          try {
+            display.value = eval(display.value);
+          } catch {
+            display.value = "Error";
+          }
+        } else if (button.classList.contains('clear')) {
+          display.value = '';
+        } else {
+          display.value += button.textContent;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+print("press enter after each element,press-999 to stop")
+list1 = []
+num = int(input())
+while num!= -999:
+    list1.append(num)
+    num = int(input())
+n = int(input("enter the key to be searched:")) 
+pos= binarysearch(list1, n)
+if pos !=-1:
+ print(n,"is found at position",pos+1)
+    
+ print(n,"is not found at position",pos+1)
